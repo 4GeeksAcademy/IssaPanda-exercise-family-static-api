@@ -90,10 +90,12 @@ def test_get_first_member_tommy(client):
     assert "first_name" in data
     assert data["first_name"] == "Tommy"
 
+
 @pytest.mark.it("Implement method DELETE /member/<int:id> to delete a family member")
 def test_delete_member(client):
     response = client.delete('/member/3443')
     assert response.status_code == 200
+    
 
 @pytest.mark.it("Method DELETE /member/3443 should return dictionary with 'done' key")
 def test_delete_response(client):
